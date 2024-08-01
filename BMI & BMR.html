@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Calculation of BMI and BMR </title>
+    <style>
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: left;
+        }
+
+      #result{
+          
+          font-size:20px; 
+          font-family:Verdana;
+          
+      }
+
+     #result1{
+        color:darkblue;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+     }
+        
+        
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for=" gender"> Gender  </label>
+        <select id="gender" name="gender" required>
+            <option></option>
+            <option value="male"> Male</option>
+            <option value="female"> Female</option>
+
+        </select> <br />
+        <br />
+        <label for=" age"> Age</label>
+        <input type="number" id="age" name="age" required /><br />
+        <br />
+
+        <label for="height"> Height  </label>
+        <input type="number" id="height" placeholder="height in cm"name=" height" required /><br />
+        <br />
+
+        <label for="weight"> Weight  </label>
+        <input type="number" id="weight" placeholder="weight in kg " name="weight" required /><br />
+        <br />
+        <label for=" result"></label>
+        <button type="button" onclick="calculateBMI()"> Calculate BMI</button>   <br />
+
+        
+        <br />
+
+         <label for=" result1"></label>
+         <button type="button" onclick="calculateBMR()"> Calculate BMR</button>
+        <br />
+
+
+
+
+    </form>
+    
+
+        <div id="result">  </div>   <br />
+
+                    <div id="result1">  </div>
+
+
+    <script>
+        
+    function calculateBMI() {
+        var gender = document.getElementById("gender");
+
+        var age = parseInt(document.getElementById("age").value);
+
+        var height = parseFloat(document.getElementById("height").value);
+
+        var weight = parseFloat(document.getElementById("weight").value);
+
+       
+        var result = document.getElementById("result");
+        
+        var bmi = weight / ((height / 100) ** 2);
+        var status = "";
+
+        if (bmi < 18.5) {
+            status = "Underweight";
+            result.style.color = "light red";
+        }
+
+        else if (bmi < 25) {
+            status = "Healthy Weight";
+            result.style.color = "Green";
+        }
+
+        else if (bmi < 30) {
+            status = "Overweight";
+            result.style.color = "Orange";
+        }
+
+        else if (bmi >30) {
+            status = "Obese";
+            result.style.color = "Red";
+        }
+        else if (bmi >= 35) {
+            status = "Extremely Obese";
+            result.style.color = "orange";
+
+        }
+
+
+        result.innerHTML ="BMI Status: " + bmi.toFixed(2) + " ("+ status +")";
+        
+        
+        }
+       
+
+    </script>
+
+    <script>
+          
+        function calculateBMR() {
+
+            var gender = document.getElementById("gender").value;
+
+            var age = parseInt(document.getElementById("age").value);
+
+            var height = parseFloat(document.getElementById("height").value);
+
+            var weight = parseFloat(document.getElementById("weight").value);
+
+            var result1 = document.getElementById("result1");
+
+            if (gender == "male") {
+                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            }
+            else if (gender == "female") {
+                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+            }
+
+            result1.innerHTML = "BMR Status: " + bmr.toFixed(2);
+        }
+    </script>
+
+
+
+
+</body>
+</html>
