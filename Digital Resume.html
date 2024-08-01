@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Digital Resume</title>
+    <script src="Scripts/jquery-3.7.1.min.js"></script>
+
+
+    <style>
+        body {
+            background-color: lightsteelblue;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            min-height: 100px;
+        }
+
+        .resume {
+            position: initial;
+            width: 50%;
+            align-content: start;
+            margin: 20px;
+        }
+
+            .resume.left {
+                position: relative;
+                background-color: lightblue;
+                padding: 50px;
+                width: 50%;
+            }
+
+            .resume.right {
+                position: relative;
+                background-color: darkslateblue;
+                padding: 50px;
+                width: 50%;
+            }
+
+        .profile {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+
+        .contactInfo {
+            position: relative;
+            cursor: pointer;
+        }
+
+
+
+        .profile h2 {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .title {
+            background-color: tomato;
+            padding: 2px;
+            width: 35%;
+            border-radius: 30px 20px 30px 0px;
+            text-align: left;
+        }
+
+        .heading {
+            background-color: tomato;
+            padding: 2px;
+            text-align: left;
+            width: 20%;
+            border-radius: 30px 20px 30px 0px;
+        }
+
+        
+        .h {
+            background-color:lightyellow;
+            
+            
+        }
+
+      
+    
+
+
+    
+
+.content 
+{
+    position:relative;
+    font-size: 15px;
+    transition: font-size 0.3s ease;
+     cursor: pointer;
+}
+
+.enlarge {
+    position:absolute;
+    font-size: 25px;
+}
+    </style>
+
+</head>
+<body class="content " onclick="toggleSize()">
+
+    <div>
+
+        <div class="resume ">
+
+
+
+            <div class="profile left">
+
+                <img src="Images/profile.jpg" width="300" height="200" />
+            </div>
+            <div style="color:lightyellow;font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">
+                <h2> Nandhakumar S </h2>
+                <h2>  Web Developing Professional</h2>
+
+            </div>
+
+            <div class=" large">
+                <h3 class="title"> Contact Info</h3>
+                <ul>
+                    <li>
+                        <span class="text"> +91 86645 23328</span>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="mailto: nandhakumar508@gmail.com">nandhakumar508@gmail.com</a>
+                    </li>
+
+                    <li>
+                        <a href="twitter">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="facebook">Facebook</a>
+                    </li>
+
+
+                    <li>
+                        <a href="instagram">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="left">
+        </div>
+        <div class=" large">
+            <h3 class="title"> Education </h3>
+            <ul>
+
+                <li>
+                    <h4>
+                        Bachelor Degree in Computer Science
+                    </h4>
+                    <p> PSG college of Arts and Science, 2012-2015</p>
+                </li>
+                <li>
+                    <h4>
+                        Master Degree in Computer Science
+                    </h4>
+                    <p> Bharathiar University, 2016-2018</p>
+
+                </li>
+            </ul>
+        </div>
+        <div class=" large">
+            <h3 class="title"> Languages </h3>
+            <ul>
+
+                <li> English</li>
+                <li> Tamil</li>
+                <li> Hindi</li>
+
+            </ul>
+        </div>
+        <br />
+    </div>
+
+    <div>
+        <div class=" large">
+            <div class="right ">
+
+                <div>
+                    <h3 class="heading"> Profile</h3>
+                    <p> Developing a web page and custom data cetric web application using ASP.NET, C#, and MS SQL. Well experience in designs, developement testing and requirement analysis. Seekig to secure a challenging position as web developer.  </p>
+
+                </div> <br />
+            </div>
+            <div class=" large">
+                <h3 class="heading"> Work Experience</h3>
+
+                <p style="font-size:16px;"> <b> ABC Technologies Pvt Ltd </b></p>
+                <p style="font-size:14px"> <b>Job Role:</b> Web Developer</p>
+                <ul>
+                    <li> March 2019 - February 2023</li>
+                    <li>Develope and maintain company websites with modern HTML5, CSS and JavaScript. </li>
+                    <li> Implemented user defined design techniques to ensure compatibility across various devices.</li>
+                    <li> Diagnose and troubleshoot various issues and update the knowledge of modern technologies across the field. </li>
+
+                </ul>
+
+            </div>
+            <div class=" large">
+                <h3 class="heading"> Skills </h3>
+                <p> Excellent communication and interpersonal skillls.</p>
+                <p> Strong problem solving and analytical skills.</p>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>jQuery</li>
+                    <li>C Sharp</li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <script>
+
+            $(document).ready(function () {
+                $("p,h3,li").mouseover(function () {
+                    $(this).addClass("h");
+
+
+
+                });
+
+                $("h3,p,li").mouseout(function () {
+
+                    $(this).removeClass("h");
+
+                });
+            });
+
+
+
+        </script>
+    </div>
+    <div>
+        <script>
+            function toggleSize() {
+                var content = document.querySelector('.content');
+                content.classList.toggle('enlarge');
+            }
+        </script>
+
+
+    </div>
+
+
+</body>
+</html>
